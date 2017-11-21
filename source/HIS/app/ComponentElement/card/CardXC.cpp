@@ -170,24 +170,6 @@ CardXC::CardXC(std::string& name, CBaseSlot* slot) : CBaseCard(name, slot),
         index = UID::makeUID(&clkinfo);
         xcpcmclock_obj[i] = new XcPCMClockSource(index, i+1, pcmLgc);
     }
-    /* ���������XC����������������������DCC��������������������*/
-//    ST_NM_Channel nminfo;
-//    nminfo.slot = slot->GetSn();
-//    for (int i = 0; i < 2; ++i) {
-//        nminfo.subtype = subtype_dcc;
-//        nminfo.sn = i;
-//        index = UID::makeUID(&nminfo);
-//        dccsdhrcv_obj[i] = new DCCSdhRcv(index, stm4_obj[i]->getUID(), pcmLgc);
-//        dccsdhsnd_obj[i] = new DCCSdhSnd(index, stm4_obj[i]->getUID(), pcmLgc);
-//    }
-//    for (int i = 0; i < 4; ++i) {
-//        nminfo.subtype = subtype_sabit;
-//        nminfo.sn = i;
-//        index = UID::makeUID(&nminfo);
-//        dccxe1rcv_obj[i] = new DCCXe1Rcv(index, exte1_obj[i]->getUID(), pcmLgc);
-//        dccxe1snd_obj[i] = new DCCXe1Snd(index, exte1_obj[i]->getUID(), pcmLgc);
-//    }
-
     /*  ��������������������������������������������  */
     pxc.getPccManager()->restoreCorssConnect();
 
@@ -205,10 +187,6 @@ CardXC::CardXC(std::string& name, CBaseSlot* slot) : CBaseCard(name, slot),
     printf("\nXC last new at:0x%4x\n", Am);
 #endif
     Am->initModule();
-
-    /* ����������������DCC��������*/
-    uoptLgc.dccInterruptEnable(true);
-
 
 }
 
@@ -318,44 +296,27 @@ void CardXC::changeToWorking(void) {
     /*
      * 建立管理接口
      */
-    ST_NM_Channel nminfo;
-    nminfo.slot = getSn();
+	ST_NM_Channel nminfo;
+	nminfo.slot = getSn();
 
-    nminfo.subtype = subtype_sabit;
-//    for (int i = 0; i < 4; ++i) {
-//        nminfo.sn = i;
-//        uint32 index = UID::makeUID(&nminfo);
-//
-//        nmch_dcc[i] = new ChannelSabit(index, pcmLgc);
-//
-//        nmport[i] = new NMPort(fe1_obj[i], &ConfigData->fe1port[i].nmportCfg);
-//        if( nmport[i] == 0 || nmch_dcc[i] == 0 /*|| nmch_dcn[i] == 0*/ ) {
-//            throw SysError("!!!new object failed!!!");
-//        }
-//
-//        nmport[i]->addNmChannel(nmch_dcc[i]);
-////        nmport[i]->addNmChannel(nmch_dcn[i]);
-//        nmport[i]->start();
-//    }
+	nminfo.subtype = subtype_dcc;
+	for (int i = 0; i < 2; ++i) {
+		nminfo.sn = i;
+		uint32 index = UID::makeUID(&nminfo);
 
-     nminfo.subtype = subtype_dcc;
-     for (int i = 0; i < 2; ++i) {
-         nminfo.sn = i;
-         uint32 index = UID::makeUID(&nminfo);
+		nmch_optdcc[i] = new ChannelDcc(index, pcmLgc);
 
-         nmch_optdcc[i] = new ChannelDcc(index, pcmLgc);
+		nmport[i] = new NMPort(stm4_obj[i],
+				&ConfigData->stmport[i].nmportCfg);
+		if (nmport[i] == 0 || nmch_optdcc[i] == 0) {
+			throw SysError("!!!new object failed!!!");
+		}
 
-         nmport[i+4] = new NMPort(fe1_obj[i], &ConfigData->fe1port[i].nmportCfg);
-         if( nmport[i+4] == 0 || nmch_optdcc[i] == 0 ) {
-             throw SysError("!!!new object failed!!!");
-         }
+		nmport[i]->addNmChannel(nmch_optdcc[i]);
+		nmport[i]->start();
+	}
 
-         nmport[i+4]->addNmChannel(nmch_optdcc[i]);
-         nmport[i+4]->start();
-     }
-
-
-    uoptLgc.dccInterruptEnable(true);
+	uoptLgc.dccInterruptEnable(true);
 }
 void CardXC::changeToIdle(void) {
     uoptLgc.dccInterruptEnable(false);
@@ -370,21 +331,6 @@ void CardXC::changeToIdle(void) {
         }
     }
 
-//    for (int i = 0; i < 4; ++i) {
-//        if( nmport[i] ) {
-//            nmport[i]->stop();
-//            delete nmport[i];
-//            nmport[i] = 0;
-//        }
-//        if( nmch_dcn[i] ) {
-//            delete nmch_dcn[i];
-//            nmch_dcn[i] = 0;
-//        }
-//        if( nmch_dcc[i] ) {
-//            delete nmch_dcc[i];
-//            nmch_dcc[i] = 0;
-//        }
-//    }
 }
 
 

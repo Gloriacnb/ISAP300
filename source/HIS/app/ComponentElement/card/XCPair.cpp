@@ -40,13 +40,16 @@ void XcPairSaver::loadDefaultData(void) {
         ConfigData.stmport[i].TXEN = 1;
         ConfigData.stmport[i].ALSEnable = 0;
         ConfigData.stmport[i].DescLen = 0;
+        ConfigData.stmport[i].nmportCfg.type = 0;
+        ConfigData.stmport[i].nmportCfg.topodir = 3+i;
+        ConfigData.stmport[i].nmportCfg.porten = 1;
     }
     for (int i = 0; i < 4; ++i) {
         ConfigData.fe1port[i].TXEN = 1;
         ConfigData.fe1port[i].DescLen = 0;
         ConfigData.fe1port[i].nmportCfg.dcnCH.bitMap = (1 << 30);
         ConfigData.fe1port[i].nmportCfg.porten = 1;
-        ConfigData.fe1port[i].nmportCfg.topodir = 3+i;
+        ConfigData.fe1port[i].nmportCfg.topodir = 5+i;
         ConfigData.fe1port[i].nmportCfg.type = 1;
     }
 }

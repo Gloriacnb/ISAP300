@@ -1,13 +1,15 @@
 /*
  * STMConfigDataDefine.h
  *
- *  Created on: 2014Äê11ÔÂ24ÈÕ
+ *  Created on: 2014ï¿½ï¿½11ï¿½ï¿½24ï¿½ï¿½
  *      Author: Administrator
  */
 
 
 #ifndef STMCONFIGDATADEFINE_H_
 #define STMCONFIGDATADEFINE_H_
+
+#include "FE1ConfigDataDefine.h"
 
 #if defined (__cplusplus)
 extern "C"
@@ -33,6 +35,7 @@ typedef struct {
     uint8 ALSEnable;
     char Desc[32];
     uint8 DescLen;
+    FE1_NM_Config_Data_T nmportCfg;
 }STM_Config_Data_T;
 
 #if defined (__cplusplus)
