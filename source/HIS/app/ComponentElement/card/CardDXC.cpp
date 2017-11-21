@@ -102,6 +102,7 @@ CardDXC::CardDXC(std::string& name, CBaseSlot* slot) : CBaseCard(name, slot), fp
 
 CardDXC::~CardDXC() {
     // TODO Auto-generated destructor stub
+	changeToIdle();//主备切换时，删除DXC卡需要清管理通道
     delete am;
     for( int i = 0; i < 4; i++ ) {
         delete xcpcmclock_obj[i];

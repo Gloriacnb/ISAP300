@@ -46,7 +46,7 @@ OS_TID t_aging;
 OS_TID t_tcptick;
 OS_TID t_snmp;
 
-os_mbx_declare(mbx_EMAC_input, 64);
+os_mbx_declare(mbx_EMAC_input, 128);
 
 extern "C" INTR_HANDLER void interrupt_ethernet(void); //use by IRQ.c
 extern "C" void SendFrameBySwitch(LAYER2FRAME* frame); //use by LPC3250_MAC.c
@@ -130,10 +130,10 @@ void CommunicationModule::clearWorking(void) {
 #ifdef EXT_DBG
     printf("\n clearWorking() start.\n");
 #endif
+    int_disable_eth_real();
+    InnerDCCManager::instance().stop(true);
     TopoManager::stopTopoSearch();
     TrapList::instance().deInitial();
-    InnerDCCManager::instance().stop(true);
-    int_disable_eth_real();
     if( soc_snmp != 0 ) {
         udp_close(soc_snmp);
         if(!udp_release_socket(soc_snmp)) {

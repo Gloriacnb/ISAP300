@@ -22,10 +22,10 @@ TASK void taskPortSend(void*);
 SwitchPort::SwitchPort(uint32 portSn) {
     os_mbx_init(&mbx_send, sizeof(mbx_send));
 	sn = portSn;
-	portGroup.insert( std::pair<uint32, SwitchPort*>(sn, this) );
 
 	uint8 pri = (portSn < 3) ? (P_PORT_Send) : (P_PORT_Send-1); //两个标准口的优先级高
 	task_send_packet = os_tsk_create_ex(taskPortSend, pri, this);
+	portGroup.insert( std::pair<uint32, SwitchPort*>(sn, this) );
 }
 
 SwitchPort::~SwitchPort() {
@@ -37,7 +37,7 @@ SwitchPort::~SwitchPort() {
 int SwitchPort::inputPacket(PriPacket* f) {
     if( f ) {
 #ifdef SW_DEBUG
-    printf("port inputPacket %d at %d\n", f->getPrivateTag().sn, getPortSn());
+    printf("port inputPacket %d at %d\n", f->getPrivateTag().sn, f->getSourcePort());
 #endif
 		if (SwitchCore::instance().inputAPacket(f)) {
 			return 1;

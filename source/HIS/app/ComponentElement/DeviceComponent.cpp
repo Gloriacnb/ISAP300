@@ -13,7 +13,6 @@
 #include "lpc32xx_gpio_driver.h"
 #include "CLoopModule.h"
 #include "XCPair.h"
-
 DeviceAttribute* DeviceComponent::pdevattr;
 ComponentFactory* DeviceComponent::f;
 

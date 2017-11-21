@@ -49,10 +49,10 @@ void InnerDCCManager::start(bool first) {
 }
 
 void InnerDCCManager::stop(bool end) {
+    Dcc_interrupt_disable();
     if( end ) {
         os_tsk_delete(t_dcc_rcv);
     }
-    Dcc_interrupt_disable();
 }
 
 

@@ -54,7 +54,7 @@ void ProtectAssistCell::start() {
     GeneralLogic::instance().FSMStart();
     DeviceComponent::initDeviceComponentCommon();
     CommunicationModule::initCommon();
-//    SoftWDT::instance().startSoftWDT(); //开启软狗
+    SoftWDT::instance().startSoftWDT(); //开启软狗
     if( getOMUWorkingStateByHardware() == OMU_Working ) {
         omu = new OMUWorking();
 #ifdef EZ_DEBUG
@@ -92,24 +92,30 @@ void ProtectAssistCell::switchTo(Working_STATE_E st) {
 //        slot->reset(Warm_start);
 //    }
     switch( st ) {
-    case OMU_Working:
-        delete omu;
-        try {
-            omu = new OMUWorking();
-    #ifdef EZ_DEBUG
-        std::cout << "OMUWorking" << std::endl;
-    #endif
-        }
-        catch(SysError& e) {
-            std::cout << e.what() << std::endl;
-            while(1);
-        }
+    case OMU_Working: //因为从备用切换到working导致死机，所以切到主时采用复位方式
+//        delete omu;
+//        try {
+//            omu = new OMUWorking();
+//    #ifdef EZ_DEBUG
+//        std::cout << "OMUWorking" << std::endl;
+//    #endif
+//        }
+//        catch(SysError& e) {
+//            std::cout << e.what() << std::endl;
+//            while(1);
+//        }
+    	CBaseSlot* rst = SlotModule::getSlot(0);
+    	if( rst ) {
+    		rst->reset(Warm_start);
+    	}
         break;
     case OMU_Standby:
         if( omu->ifLock() ) {
             return;
         }
-        delete omu;
+        if(omu) {
+        	delete omu;
+        }
         omu = new OMUStandby();
 #ifdef EZ_DEBUG
     std::cout << "OMUStandby" << std::endl;

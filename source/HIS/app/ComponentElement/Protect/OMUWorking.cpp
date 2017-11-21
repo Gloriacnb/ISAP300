@@ -51,21 +51,24 @@ OMUWorking::~OMUWorking() {
 #ifdef EXT_DEBUG
     printf("\n~OMUWorking()\n");
 #endif
+    CommunicationModule::clearWorking();
     SyncFileAPI::instance().clearSyncFileAPI();
     os_tsk_delete(task_sync_files);
     os_tsk_delete(task_fast_alarm);
     os_tsk_delete(task_work);
-    CommunicationModule::clearWorking();
     DeviceComponent::clearDeviceCompnent();
     GeneralLogic::instance().closeEZBUS();
 }
 
 TASK void process_Work_LED(void) {
-    os_evt_wait_and(0x8000, 0xffff);
-    InnerDCCManager::instance().start(true);
+    os_evt_wait_and(0x8000, 0xffff);//等待槽位初始化完成
+    bool ifinit = false;
 
     while( 1 ) {
         os_dly_wait(500);
+        if( ifinit ) {
+        	InnerDCCManager::instance().start(true);
+        }
         for (int i = 0; i < 2; ++i) {
             bool actWorking = GeneralLogic::instance().ifXCWorking(i);
             if(DeviceComponent::getDeviceAttribute().getDeviceSubType() < 32) {
@@ -93,6 +96,8 @@ TASK void process_Work_LED(void) {
                 }
             }
         }
+        ifinit = true;
+
     }
 }
 

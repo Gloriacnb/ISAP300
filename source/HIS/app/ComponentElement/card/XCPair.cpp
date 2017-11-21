@@ -23,6 +23,7 @@
 #include "PairClockSource.h"
 #include "PairPortFE1.h"
 
+#include <stdio.h>
 extern int shdbusSlotMapping[10];
 XCPair XCPair::pairCard;
 
@@ -57,16 +58,29 @@ bool XCPair::addResource(BaseResource* r) {
         if( pair ) {
             return pair->foundResource(r);
         }
+        else {
+    		throw SysError("!!!XC Pair add resource found failed!!!");
+        }
     }
 	else {
-		throw SysError("!!!XC Pair resource register failed!!!");
+		throw SysError("!!!XC Pair add input null!!!");
 	}
     return false;
 }
 
 bool XCPair::removeResource(BaseResource* r) {
     if( r ) {
-        return PairResource::getInstance(UID::getPairUID(r->getUID()))->loseResource(r);
+        uint32 pairuid = UID::getPairUID(r->getUID());
+        PairResource* pair = PairResource::getInstance(pairuid);
+        if( pair ) {
+            return pair->loseResource(r);
+        }
+        else {
+    		throw SysError("!!!XC Pair remove resource found failed!!!");
+        }
+    }
+    else {
+		throw SysError("!!!XC Pair remove input null!!!");
     }
     return false;
 }
@@ -149,7 +163,8 @@ bool XCPair::init(int subtype) {
     for( int i = 0; i < 5; i++ ) {
         sbInfo.slot = i+2;
         sbInfo.stbus = 0;
-        stbus_obj[i] = new PairSTBus(UID::makeUID(&sbInfo));
+        uint32 pairuid = UID::makeUID(&sbInfo);
+        stbus_obj[i] = new PairSTBus(pairuid);
     }
 
     ST_E1 e1Info;

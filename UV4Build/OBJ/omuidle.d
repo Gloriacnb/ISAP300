@@ -1,9 +1,0 @@
-.\uv4build\obj\omuidle.o: ./source/HIS/app/ComponentElement/Protect/OMUIdle.cpp
-.\uv4build\obj\omuidle.o: ./source/HIS/app/ComponentElement/Protect/OMUIdle.h
-.\uv4build\obj\omuidle.o: ./source/HIS/app/ComponentElement/Protect/OMUStatus.h
-.\uv4build\obj\omuidle.o: .\source\HIS\platform\os\include\os.h
-.\uv4build\obj\omuidle.o: .\source\HIS\platform\os\include\os_def.h
-.\uv4build\obj\omuidle.o: .\source\HIS\platform\os\include\rtl.h
-.\uv4build\obj\omuidle.o: .\source\HIS\include\EZ_types.h
-.\uv4build\obj\omuidle.o: .\source\HIS\app\communication\CommunicationModule.h
-.\uv4build\obj\omuidle.o: ./source/HIS/app/ComponentElement/Protect/SyncFileBakAPI.h

@@ -368,5 +368,5 @@ int DeviceAttribute::getSubTypeUID(const std::string& name) {
     else if( name == "MSAP300-622" || name == "masp300-622" ) {
         return 34;
     }
-    return -1;
+    return 32;
 }

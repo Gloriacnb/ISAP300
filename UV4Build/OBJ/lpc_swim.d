@@ -1,9 +1,0 @@
-.\uv4build\obj\lpc_swim.o: ./source/HAL/lib/LPC/source/lpc_swim.c
-.\uv4build\obj\lpc_swim.o: .\source\HAL\lib\LPC\include\lpc_swim.h
-.\uv4build\obj\lpc_swim.o: .\source\HAL\lib\LPC\include\lpc_types.h
-.\uv4build\obj\lpc_swim.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\uv4build\obj\lpc_swim.o: .\source\HAL\lib\LPC\include\lpc_fonts.h
-.\uv4build\obj\lpc_swim.o: .\source\HAL\lib\LPC\include\lpc_types.h
-.\uv4build\obj\lpc_swim.o: .\source\HAL\lib\LPC\include\lpc_colors.h
-.\uv4build\obj\lpc_swim.o: .\source\HAL\lib\LPC\include\lpc_types.h
-.\uv4build\obj\lpc_swim.o: .\source\HAL\lib\LPC\include\lpc_helvr10.h
