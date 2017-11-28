@@ -238,7 +238,7 @@ uint32 CMibBasicAttributeColumn::GetResponse(CSnmpCell* objpCell)
  			objpCell->SetResponse(objpOID,&objResponse);
  			return CErrorValueDefine::uiConstReturnSuccess;
  		}
- 		break;
+//  		break;
  		case 11: {
             std::string s;
             DeviceComponent::getDeviceAttribute().getBaseAttribute(ln_factorydate, s);
@@ -396,7 +396,7 @@ uint32 CMibBasicAttributeColumn::SetResponse(CSnmpCell* objpCell)
  		case 10://eciDPBasicDefaultSetting
  			objpCell->SetErrorResponse(objpOID,CSnmpConstDefine::ucConstSnmpErrorNotWriteable);
  			return CErrorValueDefine::uiConstReturnSuccess;
- 		break;
+//  		break;
  	}
 
 	return CErrorValueDefine::uiConstReturnFailed;

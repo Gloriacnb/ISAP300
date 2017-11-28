@@ -121,10 +121,7 @@ bool NMPort::setEnable(uint8 en, bool save) {
         ConfigData->porten = en;
         return phyPort->saveConfig();
     }
-    else {
-        return true;
-    }
-    return false;
+    return true;
 }
 
 uint8 NMPort::getType(void) {

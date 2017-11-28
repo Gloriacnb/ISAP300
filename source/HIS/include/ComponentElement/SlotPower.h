@@ -23,9 +23,9 @@ public:
 
     virtual int GetCardTypeIDFromHardware();
     virtual bool supportThisCard(int cardType);
-    virtual bool reset(uint32){
-		return true;
-	};
+//     virtual bool reset(uint32){
+// 		return true;
+// 	};
 private:
     FANPOWModule mod;
 };

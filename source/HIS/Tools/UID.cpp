@@ -163,41 +163,43 @@ static const char* SLOTNAME[] = {
 
 uint32 UID::getPartnerUID(uint32 id) {
     UN_Info info = breakUID(id);
-    uint8 type = (id >> 16) & 0xff;
+    uint32 newID = id;
+    uint8 type = (newID >> 16) & 0xff;
     switch( type ) {
     case type_sdhbus:
     case type_stbus:{
-        if( (id >> 28) == 0 ) {
-            return id | 0x10000000;
+        if( (newID >> 28) == 0 ) {
+            newID |= 0x10000000;
         }
-        return id & 0x0fffffff;
+        newID &= 0x0fffffff;
     }
     break;
     default: {
-        if( (id >> 24) == 0 ) {
-            return id | 0x01000000;
+        if( (newID >> 24) == 0 ) {
+            newID |= 0x01000000;
         }
-        return id & 0x00ffffff;
+        newID &= 0x00ffffff;
     }
     }
-    return 0;
+    return newID;
 }
 
 
 uint32 UID::getPairUID(uint32 id) {
-    UN_Info info = breakUID(id);
-    uint8 type = (id >> 16) & 0xff;
+    uint32 newID = id;
+    UN_Info info = breakUID(newID);
+    uint8 type = (newID >> 16) & 0xff;
     switch( type ) {
     case type_sdhbus:
     case type_stbus: {
-        return id & 0x0fffffff;
+        newID &= 0x0fffffff;
     }
     break;
     default: {
-        return id & 0x00ffffff;
+        newID &= 0x00ffffff;
     }
     }
-    return 0;
+    return newID;
 }
 
 

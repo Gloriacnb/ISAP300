@@ -36,16 +36,16 @@ uint32 VariableBindings::getVBNumberFromBuf(unsigned char *buf,uint32 len)
 	uint32 etl = len;
 	while(true)
 	{
-		if(buf[point]!=0x30) return num;
+		if(buf[point]!=0x30) break;
 
 		vblength = SNMPPdu::decodeLength(&(buf[point+1]),etl-1,&offset);	  //�����ݰ�Ȳ�У��
-		if( vblength>3000 ) return num;		
+		if( vblength>3000 ) break;		
 		point += offset+1+vblength;
 		etl = etl -  (offset+1+vblength);
 		num++;
-		if(point>=len) return num;
+		if(point>=len) break;
 	}
-	return 0xffffffff;
+	return num;
 }
 void VariableBindings::newVBS(int len)
 {

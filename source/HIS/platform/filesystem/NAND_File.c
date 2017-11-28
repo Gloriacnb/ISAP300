@@ -27,17 +27,17 @@ extern int getkey (void);
 static void cmd_format (char *par) {
     char *label;
     char arg[20];
-    U32 retv;
+//    U32 retv;
 
     label = 0;
     if (label == NULL) {
-        label = "KEIL";
+        label = "ISAP";
     }
     strcpy (arg, label);
     startformat:
-    printf ("\nFormat NAND Flash Memory? [Y/N]\n");
-    retv = getkey();
-    if (retv == 'y' || retv == 'Y') {
+    printf ("\nFormat NAND Flash Memory.\n");
+//    retv = getkey();
+//    if (retv == 'y' || retv == 'Y') {
         /* Format the Card with Label "KEIL". "*/
         if (fformat (arg) == 0) {
             printf ("NAND Flash Formatted with label %s\n", label);
@@ -46,7 +46,7 @@ static void cmd_format (char *par) {
             printf ("Formatting failed.\n");
             goto startformat;
         }
-    }
+//    }
 }
 
 /*----------------------------------------------------------------------------

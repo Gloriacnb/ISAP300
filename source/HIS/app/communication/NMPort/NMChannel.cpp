@@ -29,7 +29,7 @@ bool NMChannel::receivData(void) {
         int pkgLen = getPacketLen();
         if( (pkgLen < 20)  || (pkgLen > getMTU()) ) {
 #ifdef EZ_DEBUG
-            printf("\NMChannel %8x len %d error\n", getUID(), pkgLen);
+            printf("\nNMChannel %8x len %d error\n", getUID(), pkgLen);
 #endif
             discardPacket();
             continue;

@@ -92,7 +92,7 @@ void ProtectAssistCell::switchTo(Working_STATE_E st) {
 //        slot->reset(Warm_start);
 //    }
     switch( st ) {
-    case OMU_Working: //因为从备用切换到working导致死机，所以切到主时采用复位方式
+    case OMU_Working: {//因为从备用切换到working导致死机，所以切到主时采用复位方式
 //        delete omu;
 //        try {
 //            omu = new OMUWorking();
@@ -104,10 +104,11 @@ void ProtectAssistCell::switchTo(Working_STATE_E st) {
 //            std::cout << e.what() << std::endl;
 //            while(1);
 //        }
-    	CBaseSlot* rst = SlotModule::getSlot(0);
-    	if( rst ) {
-    		rst->reset(Warm_start);
-    	}
+            CBaseSlot* rst = SlotModule::getSlot(0);
+            if( rst ) {
+                rst->reset(Warm_start);
+            }
+		}
         break;
     case OMU_Standby:
         if( omu->ifLock() ) {

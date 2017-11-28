@@ -334,8 +334,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>1</oTime>
+            <Optim>3</Optim>
+            <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>0</OneElfS>
             <Strict>0</Strict>
@@ -343,14 +343,14 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>1</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <VariousControls>
-              <MiscControls>--exceptions</MiscControls>
+              <MiscControls>--exceptions --diag_suppress=368,611,1299</MiscControls>
               <Define>STDIO EZ_DEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>.\source\HAL\include;.\source\HAL\lib\LPC32xx\include;.\source\HAL\lib\LPC\include;.\source\HIS\include;.\source\HIS\platform\os\include;.\source\HIS\platform\filesystem;.\source\HIS\platform\net;.\source\HIS\platform\tools;.\source\HIS\platform\os\RTX;.\source\HAL\lib\SYS_API\include;.\source\HIS\include\MidWare;.\source\HIS\include\ComponentElement;.\source\HAL\lib\CP1121A\inc;.\source\HIS\app\communication\SoftSwitch;.\source\HIS\app\communication\SNMP;.\source\HIS\app\communication\SNMP\SNMPMib\include;.\source\HIS\app\communication\SNMP\SNMPMib;.\source\HIS\app\communication\SNMP\Depend;.\source\HIS\app\communication;.\source\HIS\app\communication\SNMP\SNMPMib\Private\ModuleGroup;.\source\HIS\app\BusinessResource;.\source\HIS\app\communication\SNMP\SNMPMib\Private\ElementGroup;.\source\HIS\app\UpDataMain;.\source\HIS\app\BusinessClockSource;.\source\HIS\app\communication\TopologyModule;.\source\HIS\app\ComponentElement\compmisc\VFCommand;.\source\HIS\app\AlarmModule\AlarmFrame;.\source\HIS\app\AlarmModule\XCAlarm;.\source\HIS\app\communication\SNMP\SNMPMib\Private\AlarmGroup;.\source\HIS\app\AlarmModule\E1CardAlarm;.\source\HIS\app\AlarmModule\TribSTMAlarm;.\source\HIS\app\AlarmModule\EOSCardAlarm;.\source\HIS\app\BusinessResource\OtherCardResource;.\source\HIS\app\BusinessResource\XCPairResource;.\source\HIS\app\BusinessResource\XCResource;.\source\HIS\app\ComponentElement\Protect;.\source\HIS\app\ComponentElement\compmisc\FANPOWCommand;.\source\HIS\app\AlarmModule\EmuxXCAlarm;.\source\HIS\app\AlarmModule\FECardAlarm;.\source\HIS\app\communication\SNMP\Trap;.\source\HIS\app\communication\NMPort</IncludePath>
+              <IncludePath>.\source\HAL\include;.\source\HAL\lib\LPC32xx\include;.\source\HAL\lib\LPC\include;.\source\HIS\include;.\source\HIS\platform\os\include;.\source\HIS\platform\filesystem;.\source\HIS\platform\net;.\source\HIS\platform\tools;.\source\HIS\platform\os\RTX;.\source\HAL\lib\SYS_API\include;.\source\HIS\include\MidWare;.\source\HIS\include\ComponentElement;.\source\HIS\app\communication\SoftSwitch;.\source\HIS\app\communication\SNMP;.\source\HIS\app\communication\SNMP\SNMPMib\include;.\source\HIS\app\communication\SNMP\SNMPMib;.\source\HIS\app\communication\SNMP\Depend;.\source\HIS\app\communication;.\source\HIS\app\communication\SNMP\SNMPMib\Private\ModuleGroup;.\source\HIS\app\BusinessResource;.\source\HIS\app\communication\SNMP\SNMPMib\Private\ElementGroup;.\source\HIS\app\UpDataMain;.\source\HIS\app\BusinessClockSource;.\source\HIS\app\communication\TopologyModule;.\source\HIS\app\ComponentElement\compmisc\VFCommand;.\source\HIS\app\AlarmModule\AlarmFrame;.\source\HIS\app\AlarmModule\XCAlarm;.\source\HIS\app\communication\SNMP\SNMPMib\Private\AlarmGroup;.\source\HIS\app\AlarmModule\E1CardAlarm;.\source\HIS\app\AlarmModule\TribSTMAlarm;.\source\HIS\app\AlarmModule\EOSCardAlarm;.\source\HIS\app\BusinessResource\OtherCardResource;.\source\HIS\app\BusinessResource\XCPairResource;.\source\HIS\app\BusinessResource\XCResource;.\source\HIS\app\ComponentElement\Protect;.\source\HIS\app\ComponentElement\compmisc\FANPOWCommand;.\source\HIS\app\AlarmModule\EmuxXCAlarm;.\source\HIS\app\AlarmModule\FECardAlarm;.\source\HIS\app\communication\SNMP\Trap;.\source\HIS\app\communication\NMPort</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

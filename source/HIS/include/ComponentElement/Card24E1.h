@@ -21,7 +21,7 @@ class PairRscSDHChannel;
 class E1CardAlarmModule;
 
 typedef struct {
-    UE1_Config_Data_T port[24];//24¸öE1¿ÚµÄÊ¹ÄÜ¡¢SNCP±£»¤¡¢ÃèÊö¡¢³¤¶È
+    UE1_Config_Data_T port[24];//24ï¿½ï¿½E1ï¿½Úµï¿½Ê¹ï¿½Ü¡ï¿½SNCPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     SrcE1Alarm_Data E1AlmData[24];
 }Card_ConfigData_24E1;
 
@@ -51,6 +51,7 @@ public:
 private:
 //    friend TASK void Do_24E1_LED(void* pxc);
     friend class E1CardAlarmModule;
+    Chip24E1CPLD cpld;
     ChipE1Logic chipE1;//FPGAchip
     ChipRC7883 chipE1Map;//7883chip
     PortE1* e1port_obj[E1_Port_Num];
@@ -58,7 +59,6 @@ private:
     PairRscSDHChannel* getConnectedSDHChannel(uint32 puid);
 
     std::string cardversionInfo;
-    Chip24E1CPLD cpld;
 
 //    OS_TID C24E1_LED;
     E1CardAlarmModule* AM;

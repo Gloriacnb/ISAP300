@@ -10,7 +10,6 @@
       <TargetName>LPC3250</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>LPC3250</Device>
@@ -31,7 +30,6 @@
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
           <SFDFile></SFDFile>
-          <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
           <IncludePath></IncludePath>
@@ -73,8 +71,6 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopB1X>0</nStopB1X>
-            <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
@@ -83,8 +79,6 @@
             <UserProg2Name>addcrc.bat</UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopA1X>0</nStopA1X>
-            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
           <SVCSIdString></SVCSIdString>
@@ -103,7 +97,6 @@
           <StopOnExitCode>3</StopOnExitCode>
           <CustomArgument></CustomArgument>
           <IncludeLibraryModules></IncludeLibraryModules>
-          <ComprImg>1</ComprImg>
         </CommonProperty>
         <DllOption>
           <SimDllName>SARM.DLL</SimDllName>
@@ -133,7 +126,6 @@
             <RestoreFunctions>1</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
             <UseTarget>1</UseTarget>
@@ -145,10 +137,9 @@
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>1</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>-1</TargetSelection>
+          <TargetSelection>15</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -174,14 +165,9 @@
             <Capability>1</Capability>
             <DriverSelection>4100</DriverSelection>
           </Flash1>
-          <bUseTDR>0</bUseTDR>
           <Flash2>..\TKScope\ULP2ARM_TKSCP_DRV_ARM_for_AGDI.dll</Flash2>
           <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
-          <pFcarmOut></pFcarmOut>
-          <pFcarmGrp></pFcarmGrp>
-          <pFcArmRoot></pFcArmRoot>
-          <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
           <ArmAdsMisc>
@@ -228,7 +214,6 @@
             <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
-            <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
@@ -349,8 +334,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
-            <oTime>1</oTime>
+            <Optim>3</Optim>
+            <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>0</OneElfS>
             <Strict>0</Strict>
@@ -358,20 +343,11 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>1</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
-            <useXO>0</useXO>
-            <v6Lang>1</v6Lang>
-            <v6LangP>1</v6LangP>
-            <vShortEn>1</vShortEn>
-            <vShortWch>1</vShortWch>
-            <v6Lto>0</v6Lto>
-            <v6WtE>0</v6WtE>
-            <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>--exceptions</MiscControls>
+              <MiscControls>--exceptions --diag_suppress=368,611,1299</MiscControls>
               <Define>STDIO EZ_DEBUG</Define>
               <Undefine></Undefine>
               <IncludePath>.\source\HAL\include;.\source\HAL\lib\LPC32xx\include;.\source\HAL\lib\LPC\include;.\source\HIS\include;.\source\HIS\platform\os\include;.\source\HIS\platform\filesystem;.\source\HIS\platform\net;.\source\HIS\platform\tools;.\source\HIS\platform\os\RTX;.\source\HAL\lib\SYS_API\include;.\source\HIS\include\MidWare;.\source\HIS\include\ComponentElement;.\source\HAL\lib\CP1121A\inc;.\source\HIS\app\communication\SoftSwitch;.\source\HIS\app\communication\SNMP;.\source\HIS\app\communication\SNMP\SNMPMib\include;.\source\HIS\app\communication\SNMP\SNMPMib;.\source\HIS\app\communication\SNMP\Depend;.\source\HIS\app\communication;.\source\HIS\app\communication\SNMP\SNMPMib\Private\ModuleGroup;.\source\HIS\app\BusinessResource;.\source\HIS\app\communication\SNMP\SNMPMib\Private\ElementGroup;.\source\HIS\app\UpDataMain;.\source\HIS\app\BusinessClockSource;.\source\HIS\app\communication\TopologyModule;.\source\HIS\app\ComponentElement\compmisc\VFCommand;.\source\HIS\app\AlarmModule\AlarmFrame;.\source\HIS\app\AlarmModule\XCAlarm;.\source\HIS\app\communication\SNMP\SNMPMib\Private\AlarmGroup;.\source\HIS\app\AlarmModule\E1CardAlarm;.\source\HIS\app\AlarmModule\TribSTMAlarm;.\source\HIS\app\AlarmModule\EOSCardAlarm;.\source\HIS\app\BusinessResource\OtherCardResource;.\source\HIS\app\BusinessResource\XCPairResource;.\source\HIS\app\BusinessResource\XCResource;.\source\HIS\app\ComponentElement\Protect;.\source\HIS\app\ComponentElement\compmisc\FANPOWCommand;.\source\HIS\app\AlarmModule\EmuxXCAlarm;.\source\HIS\app\AlarmModule\FECardAlarm;.\source\HIS\app\communication\SNMP\Trap;.\source\HIS\app\communication\NMPort</IncludePath>
@@ -386,8 +362,6 @@
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
-            <useXO>0</useXO>
-            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>RAM_INTVEC REMAP</Define>
@@ -404,7 +378,6 @@
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x08000000</DataAddressRange>
-            <pXoBase></pXoBase>
             <ScatterFile>.\UV4Build\ISAP300_Realese.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
