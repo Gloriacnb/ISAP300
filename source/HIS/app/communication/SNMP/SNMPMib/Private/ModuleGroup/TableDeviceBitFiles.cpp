@@ -131,7 +131,6 @@ int TableDeviceBitFiles_crcsta::CallbackGet(const index_info_T& index) {
 int TableDeviceBitFiles_cmp::CallbackGet(const index_info_T& index) {
     FINFO info;
     if( FileFind::getBitFileInfoByID(index.index[1], info) ) {
-        int retryCnt = 0;
         return SyncFileAPI::instance().ifSame((char*)info.name);
     }
     return -1;

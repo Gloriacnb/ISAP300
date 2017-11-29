@@ -1469,7 +1469,7 @@ BOOL_32 cmd_reset(void) {
 //    if(slot<= slt.size()){
 	if( rst == 0 ) {
 	    while(1); //测试看门狗用
-	    return FALSE;
+// 	    return FALSE;
 	}
 	if( slot < 2 ) {
         printf("\nreset the %d slot\n", slot);

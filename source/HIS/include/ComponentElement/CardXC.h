@@ -108,12 +108,13 @@ public:
         }
     };
 private:
-    ClockZarlink30122 clock;
     ChipUOPTLogic uoptLgc;
     ChipPCMLogic pcmLgc;
     ChipSDHLogic sdhLgc;
     ChipCP1121A cp1121a;
     DriverSDHXc driver;
+    ChipXCCPLD cpld;
+    ClockZarlink30122 clock;
     friend TASK void check_opt_los(void);
 
     friend class XCAlarmModule;
@@ -136,7 +137,6 @@ private:
 //    DCCXe1Snd* dccxe1snd_obj[4];
 
     std::string cardversionInfo;
-    ChipXCCPLD cpld;
 
     Card_ConfigData_XC* ConfigData;
     XC_Alarm_Data_T AlarmData;

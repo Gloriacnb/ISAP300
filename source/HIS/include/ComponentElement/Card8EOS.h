@@ -41,11 +41,11 @@ public:
 
 private:
     friend class EOS8CardAlarmModule;
+    Chip8EOSCPLD cpld;
     Chip8EOSLogic fpga;
     ChipRC6400 eos_1;
     ChipRC6400 eos_2;
 
-    Chip8EOSCPLD cpld;
     std::string cardversionInfo;
 
     CHVC* chvc_obj[126];

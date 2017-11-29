@@ -71,7 +71,7 @@ bool SrcSTMPort::getAlarm(int type) {
         }
         return port->getMsRei();
     default:
-        return false;
+        break;
     }
     return false;
 }

@@ -129,7 +129,7 @@ private:
     static const uint16 REG_PCM_CLOCK_START = 0x9105;
 
     static const uint16 REG_E1_Module_BASE = 0xa000;
-    static const uint16 getE1RegAddr(uint8 ch) {
+    static uint16 getE1RegAddr(uint8 ch) {
         return REG_E1_Module_BASE | (ch << 9);
     };
     static const uint16 REG_E1_ALARM_OFFSET = 0x00; //bit4 RDI; bit3 MFI; bit2 LOF(0); bit1 AIS; bit0 LOS(0);

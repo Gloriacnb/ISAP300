@@ -75,22 +75,6 @@ Card4STM1::Card4STM1(std::string& name, CBaseSlot* slot) :
     /* �������ӹ�����  */
     ccm_obj = new CrossConnectionManager(slot->GetSn());
 
-    /* ����˿� */
-//    for (int i = 0; i < 4; ++i) {
-//        uint32 index = (slot->GetSn() << 8) | i | (type_dcc << 16);
-//        dccsdhrcv_obj[i] = new DCCTribRcv(index, tribstm_obj[i]->getUID(), fpga2);
-//        dccsdhsnd_obj[i] = new DCCTribSnd(index, tribstm_obj[i]->getUID(), fpga2);
-//    }
-    ST_NM_Channel nminfo;
-    nminfo.slot = slot->GetSn();
-//    for (int i = 0; i < 4; ++i) {
-//        nminfo.subtype = subtype_dcc;
-//        nminfo.sn = i;
-//        uint32 index = UID::makeUID(&nminfo);
-//        dccsdhrcv_obj[i] = new DCCTribRcv(index, tribstm_obj[i]->getUID(), fpga2);
-//        dccsdhsnd_obj[i] = new DCCTribSnd(index, tribstm_obj[i]->getUID(), fpga2);
-//    }
-
     cardversionInfo = cpld.GetVerInfo();
 
     Am = new Trib4STM1AlarmModule(this);
@@ -102,13 +86,6 @@ Card4STM1::Card4STM1(std::string& name, CBaseSlot* slot) :
 Card4STM1::~Card4STM1() {
 
     delete Am;
-	/* ����˿� */
-//    cpld.disableDCC();
-//
-//	for (int i = 0; i < 4; ++i) {
-//		delete dccsdhrcv_obj[i];
-//		delete dccsdhsnd_obj[i];
-//	}
 	delete ccm_obj;
 	for (int i = 0; i < 126; i++) {
 		delete sltch_obj[i];

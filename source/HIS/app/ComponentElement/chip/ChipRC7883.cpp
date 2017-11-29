@@ -233,24 +233,47 @@ bool ChipRC7883::setJ0T(int sn, uint8* j0) {
     }
     return false;
 }
-bool ChipRC7883::setJ0E(int sn, uint8* j0){}
+bool ChipRC7883::setJ0E(int sn, uint8* j0) {
+	return false;
+}
 
-bool ChipRC7883::setJ0LenTransmit(int sn, uint8 mode){} //0 singleByte; 1 16 bytes
-bool ChipRC7883::setJ0LenExpected(int sn, uint8 mode){}
+bool ChipRC7883::setJ0LenTransmit(int sn, uint8 mode) {
+	return false;
+} //0 singleByte; 1 16 bytes
+bool ChipRC7883::setJ0LenExpected(int sn, uint8 mode) {
+	return false;
+}
 
-bool ChipRC7883::setSingleByteJ0T(int sn, uint8 j0){}
+bool ChipRC7883::setSingleByteJ0T(int sn, uint8 j0) {
+	return false;
+}
 
+uint32 ChipRC7883::getB3(int sn) {
+	return false;
+}
+bool ChipRC7883::getJ1T(int sn, uint8* j1) {
+	return false;
+}
+bool ChipRC7883::getJ1E(int sn, uint8* j1) {
+	return false;
+}
+bool ChipRC7883::getJ1R(int sn, uint8* j1) {
+	return false;
+}
 
-uint32 ChipRC7883::getB3(int sn){}
-bool ChipRC7883::getJ1T(int sn, uint8* j1){}
-bool ChipRC7883::getJ1E(int sn, uint8* j1){}
-bool ChipRC7883::getJ1R(int sn, uint8* j1){}
+bool ChipRC7883::setJ1T(int sn, uint8* j1) {
+	return false;
+}
+bool ChipRC7883::setJ1E(int sn, uint8* j1) {
+	return false;
+}
 
-bool ChipRC7883::setJ1T(int sn, uint8* j1){}
-bool ChipRC7883::setJ1E(int sn, uint8* j1){}
-
-bool ChipRC7883::setJ1LenTransmit(int sn, uint8 mode){} //0 singleByte; 1 16 bytes
-bool ChipRC7883::setJ1LenExpected(int sn, uint8 mode){}
+bool ChipRC7883::setJ1LenTransmit(int sn, uint8 mode) {
+	return false;
+} //0 singleByte; 1 16 bytes
+bool ChipRC7883::setJ1LenExpected(int sn, uint8 mode) {
+	return false;
+}
 
 bool ChipRC7883::getAUAIS(int vc4) {
     uint8 alm1; //los,lof,lom,aulop,rstim,hpuneq,hptim hpplm

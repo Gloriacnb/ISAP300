@@ -629,7 +629,7 @@ uint32 CSnmpCommand::Decode(uint8* ucpData,uint32 uiLength)
 			return CErrorValueDefine::uiConstReturnSuccess;
 		}
 	}
-	return CErrorValueDefine::uiConstReturnFailed;
+// 	return CErrorValueDefine::uiConstReturnFailed;
 }
 
 
