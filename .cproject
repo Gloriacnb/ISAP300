@@ -38,6 +38,28 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x\source\HIS\app\communication\SNMP\Depend}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x\source\HIS\app\communication}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HAL/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/SNMPMib/Private/ModuleGroup}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/SNMPMib/Private/ElementGroup}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/UpDataMain}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessClockSource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/TopologyModule}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/ComponentElement/compmisc/VFCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/AlarmFrame}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/XCAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/SNMPMib/Private/AlarmGroup}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/E1CardAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/TribSTMAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/EOSCardAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource/OtherCardResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource/XCPairResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource/XCResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/ComponentElement/Protect}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/ComponentElement/compmisc/FANPOWCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/EmuxXCAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/FECardAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/Trap}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/NMPort}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.338529750" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -65,6 +87,28 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x\source\HIS\app\communication\SNMP\SNMPMib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x\source\HIS\app\communication\SNMP\Depend}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x\source\HIS\app\communication}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/SNMPMib/Private/ModuleGroup}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/SNMPMib/Private/ElementGroup}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/UpDataMain}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessClockSource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/TopologyModule}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/ComponentElement/compmisc/VFCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/AlarmFrame}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/XCAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/SNMPMib/Private/AlarmGroup}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/E1CardAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/TribSTMAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/EOSCardAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource/OtherCardResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource/XCPairResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource/XCResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/ComponentElement/Protect}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/ComponentElement/compmisc/FANPOWCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/EmuxXCAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/FECardAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/Trap}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/NMPort}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1004093439" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -91,6 +135,28 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x\source\HIS\app\communication\SNMP\SNMPMib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x\source\HIS\app\communication\SNMP\Depend}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x\source\HIS\app\communication}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/SNMPMib/Private/ModuleGroup}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/SNMPMib/Private/ElementGroup}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/UpDataMain}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessClockSource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/TopologyModule}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/ComponentElement/compmisc/VFCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/AlarmFrame}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/XCAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/SNMPMib/Private/AlarmGroup}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/E1CardAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/TribSTMAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/EOSCardAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource/OtherCardResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource/XCPairResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/BusinessResource/XCResource}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/ComponentElement/Protect}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/ComponentElement/compmisc/FANPOWCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/EmuxXCAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/FECardAlarm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/Trap}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/NMPort}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1301975968" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
