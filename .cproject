@@ -60,6 +60,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/FECardAlarm}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/Trap}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/NMPort}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\WorkProgram\Keil_V4\ARM\RV31\INC&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.338529750" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -109,6 +110,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/FECardAlarm}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/Trap}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/NMPort}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\WorkProgram\Keil_V4\ARM\RV31\INC&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1004093439" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -157,6 +159,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/AlarmModule/FECardAlarm}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/SNMP/Trap}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ISAP300_Release_V3.x/source/HIS/app/communication/NMPort}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\WorkProgram\Keil_V4\ARM\RV31\INC&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1301975968" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -236,4 +239,5 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>
