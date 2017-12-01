@@ -152,7 +152,7 @@
             <CpuDllArguments></CpuDllArguments>
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile>.\UV4Build\ISAP100_Realese_LPC3250 LPC3250.ini</InitializationFile>
+            <InitializationFile>.\ISAP300_Release_V3.x_LPC3250 LPC3250.ini</InitializationFile>
             <Driver>..\TKScope\ULP2ARM_TKSCP_DRV_ARM_for_AGDI.dll</Driver>
           </TargetDlls>
         </DebugOption>
