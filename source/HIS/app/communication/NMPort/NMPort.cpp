@@ -32,14 +32,14 @@ NMPort::NMPort(RealPortBase* phy, FE1_NM_Config_Data_T* cfgdata) : Resource(phy-
     phyPort = phy;
     WorkingNMCh = 0;
     ConfigData = cfgdata;
+    topoAgingCounter = 300;
 
     NMPortMap.insert(std::pair<uint32, NMPort*>(phyPort->getUID(), this));
 #ifdef EZ_DEBUG
     trace = new SwTrace(phyPort->getName());
-
-    topoAgingCounter = 300;
-
 #endif
+
+
 }
 
 NMPort::~NMPort() {

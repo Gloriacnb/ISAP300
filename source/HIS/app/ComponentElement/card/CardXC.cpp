@@ -51,7 +51,8 @@ int shdbusSlotMapping[] = {0,0,2,2,3,3,5,5,6,6};
 
 CardXC::CardXC(std::string& name, CBaseSlot* slot) : CBaseCard(name, slot),
         uoptLgc(slot), pcmLgc(slot), sdhLgc(slot), cp1121a(slot), driver(cp1121a, pcmLgc, uoptLgc),cpld(slot), clock(&pcmLgc) {
-    Chip_INIT_RESULT rst = donothing;
+	staWorking = false;
+	Chip_INIT_RESULT rst = donothing;
 	    /*������������������������������*/
     rst = uoptLgc.ChipInit();
     if( rst == failed ) {

@@ -38,7 +38,9 @@ OMUWorking::OMUWorking() : OMUStatus(50){
     GeneralLogic::instance().openEZBUS();
 
     task_work = os_tsk_create(process_Work_LED, P_LED);
-    task_fast_alarm = os_tsk_create(check_opt_los, P_FAST_CHECK);
+    if(DeviceComponent::getDeviceAttribute().getDeviceSubType() != SUBTYPE_EMUX) {
+    	task_fast_alarm = os_tsk_create(check_opt_los, P_FAST_CHECK);
+    }
     task_sync_files = os_tsk_create(Sync_all_files, P_FILE_SYNC - 1);
 
     lockIt(false);
@@ -63,15 +65,16 @@ OMUWorking::~OMUWorking() {
 TASK void process_Work_LED(void) {
     os_evt_wait_and(0x8000, 0xffff);//等待槽位初始化完成
     bool ifinit = false;
-
+    bool started = false;
     while( 1 ) {
         os_dly_wait(500);
-        if( ifinit ) {
+        if( ifinit && !started ) {
+        	started = true;
         	InnerDCCManager::instance().start(true);
         }
         for (int i = 0; i < 2; ++i) {
             bool actWorking = GeneralLogic::instance().ifXCWorking(i);
-            if(DeviceComponent::getDeviceAttribute().getDeviceSubType() < 32) {
+            if(DeviceComponent::getDeviceAttribute().getDeviceSubType() != SUBTYPE_EMUX) {
                 CardXC* c = ObjectReference::getPXCCard(i);
                 if( c ) {
                     try {

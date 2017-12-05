@@ -11,6 +11,9 @@
 //#include "CMidFileTxt.h"
 #include "ConfigCell.h"
 #include <string>
+typedef enum {
+	SUBTYPE_EMUX = 32,
+}Device_SubType_E;
 
 typedef enum {
     ln_info,
