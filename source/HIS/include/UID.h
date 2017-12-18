@@ -14,6 +14,7 @@
 //typedef unsigned int  uint32;
 typedef struct {
 	uint8 slot;
+    uint8 xcsn;
 	uint8 stm;
 	uint8 hp;
 	uint8 lp;
@@ -21,12 +22,14 @@ typedef struct {
 
 typedef struct {
     uint8 slot;
+    uint8 xcsn;
     uint8 stm;
     uint8 hp;
 }ST_SDH_VC4;
 
 typedef struct {
 	uint8 slot;
+    uint8 xcsn;
 	uint8 stm;
 }ST_SDH_STM;
 

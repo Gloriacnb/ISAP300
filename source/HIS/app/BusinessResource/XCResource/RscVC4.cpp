@@ -25,6 +25,7 @@ RscVC4::RscVC4(uint32 uid, ConfigCell* card, DriverSDH& chipDriver, VC4_Config_D
     HID = (info.vc4.stm << 2) + info.vc4.hp;
     ST_SDH_VC12 chinfo;
     chinfo.slot = info.vc4.slot;
+    chinfo.xcsn = info.vc4.xcsn;
     chinfo.stm = info.vc4.stm;
     chinfo.hp = info.vc4.hp;
     for( int i = 0; i < 63; i++ ) {
@@ -61,8 +62,8 @@ uint32 RscVC4::getHID() {
 }
 
 /*
- * Ó²¼þID×é³É²ßÂÔ£ºXC¿¨ÉÏ °´STM4±àÂë£¬Ë«¹âµÄVC4·Ö±ðÎª0,1,2,3ºÍ4,5,6,7
- * ÏÂÁªÖ§Â·¿¨ÉÏ£¬ÓëSDHBUS¶Ô½ÓµÄ SLOT155Í¨µÀÕ¼ÓÃ0,1£¬ÆäËûÏÂÁª¹âÖÐµÄVC4×ÊÔ´±àºÅÎª 2,3,4,5,6,7,8,9
+ * Ó²ï¿½ï¿½IDï¿½ï¿½É²ï¿½ï¿½Ô£ï¿½XCï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½STM4ï¿½ï¿½ï¿½ë£¬Ë«ï¿½ï¿½ï¿½VC4ï¿½Ö±ï¿½Îª0,1,2,3ï¿½ï¿½4,5,6,7
+ * ï¿½ï¿½ï¿½ï¿½Ö§Â·ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½SDHBUSï¿½Ô½Óµï¿½ SLOT155Í¨ï¿½ï¿½Õ¼ï¿½ï¿½0,1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½VC4ï¿½ï¿½Ô´ï¿½ï¿½ï¿½Îª 2,3,4,5,6,7,8,9
  */
 uint8 RscVC4::itsHardwareID(uint32 uid) {
     UN_Info info = UID::breakUID(uid);

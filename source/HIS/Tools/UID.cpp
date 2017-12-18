@@ -29,15 +29,18 @@ UN_Info UID::breakUID(uint32 id) {
 	case type_SDH_622:
 		if(sub_type == subtype_STM) {
 			info.stm.slot = slot;
+	        info.stm.xcsn = (id >> 28) & 0xf;
 			info.stm.stm = (id >> 12) & 0x0f;
 		}
 		else if( sub_type == subtype_vc4 ) {
 		    info.vc4.slot = slot;
+	        info.vc4.xcsn = (id >> 28) & 0xf;
 		    info.vc4.stm = (id >> 12) & 0x0f;
 		    info.vc4.hp = (id >>  8) & 0x0f;
 		}
 		else if( sub_type == subtype_vc12 ) {
 			info.vc12.slot = slot;
+	        info.vc12.xcsn = (id >> 28) & 0xf;
 			info.vc12.stm = (id >> 12) & 0x0f;
 			info.vc12.hp  = (id >>  8) & 0x0f;
 			info.vc12.lp  = (id >>  0) & 0x3f;
@@ -166,19 +169,25 @@ uint32 UID::getPartnerUID(uint32 id) {
     uint32 newID = id;
     uint8 type = (newID >> 16) & 0xff;
     switch( type ) {
+    case type_SDH_155:
+    case type_SDH_622:
     case type_sdhbus:
     case type_stbus:{
         if( (newID >> 28) == 0 ) {
             newID |= 0x10000000;
         }
-        newID &= 0x0fffffff;
+        else {
+        	newID &= 0x0fffffff;
+        }
     }
     break;
     default: {
         if( (newID >> 24) == 0 ) {
             newID |= 0x01000000;
         }
-        newID &= 0x00ffffff;
+        else {
+        	newID &= 0x00ffffff;
+        }
     }
     }
     return newID;
@@ -190,6 +199,8 @@ uint32 UID::getPairUID(uint32 id) {
     UN_Info info = breakUID(newID);
     uint8 type = (newID >> 16) & 0xff;
     switch( type ) {
+    case type_SDH_155:
+    case type_SDH_622:
     case type_sdhbus:
     case type_stbus: {
         newID &= 0x0fffffff;
@@ -378,6 +389,7 @@ uint32 UID::makeUID(ST_SDH_VC12* info) {
         ctype = type_SDH_155;
     }
 	return ( info->slot << 24) |
+            (info->xcsn << 28) |
 			(info->stm << 12) |
 			(info->hp  <<  8) |
 			(info->lp  <<  0) |
@@ -390,6 +402,7 @@ uint32 UID::makeUID(ST_SDH_STM* info) {
         ctype = type_SDH_155;
     }
 	return (info->slot << 24) |
+            (info->xcsn << 28) |
 			(info->stm << 12) |
 			(ctype     << 16) ;
 }
@@ -471,6 +484,7 @@ uint32 UID::makeUID(ST_SDH_VC4* info) {
         ctype = type_SDH_155;
     }
     return ( info->slot << 24) |
+            (info->xcsn << 28) |
             (info->stm << 12) |
             (info->hp  <<  8) |
             (ctype     << 16) |

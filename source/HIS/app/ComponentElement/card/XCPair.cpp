@@ -92,6 +92,7 @@ bool XCPair::init(int subtype) {
 		frameE1Number = 8;
 		ST_SDH_STM info;
 		info.slot = 0;
+		info.xcsn = 0;
 		for (int i = 0; i < 2; i++) {
 			info.stm = i;
 			stm4_obj[i] = new PairPortSTM(UID::makeUID(&info));

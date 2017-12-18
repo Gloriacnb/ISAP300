@@ -56,6 +56,7 @@ Card4STM1::Card4STM1(std::string& name, CBaseSlot* slot) :
      */
     ST_SDH_STM info;
     info.slot = slot->GetSn();
+    info.xcsn = 0;
     for (int i = 0; i < 4; i++) {
         info.stm = i;
         tribstm_obj[i] = new PortSTM4(UID::makeUID(&info), this, driver,

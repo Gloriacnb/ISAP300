@@ -1,7 +1,7 @@
 /*
  * PairRscVC4.cpp
  *
- *  Created on: 2014Äê11ÔÂ25ÈÕ
+ *  Created on: 2014ï¿½ï¿½11ï¿½ï¿½25ï¿½ï¿½
  *      Author: Administrator
  */
 
@@ -19,6 +19,7 @@ PairRscVC4::PairRscVC4(uint32 uid) : PairRscConnectable(uid) {
     UN_Info info = UID::breakUID(uid);
     ST_SDH_VC12 chinfo;
     chinfo.slot = info.vc4.slot;
+    chinfo.xcsn = info.vc4.xcsn;
     chinfo.stm = info.vc4.stm;
     chinfo.hp = info.vc4.hp;
     for (int i = 0; i < 63; ++i) {

@@ -35,6 +35,7 @@ PortSTM4::PortSTM4(uint32 uid, ConfigCell* card, DriverSDH& driversdh, STM_Confi
     }
     ST_SDH_VC4 info;
     info.slot = stminfo.stm.slot;
+    info.xcsn = stminfo.stm.xcsn;
     info.stm = hid;
     for( int i = 0; i < vc4Number; i++ ) {
         info.hp = i;

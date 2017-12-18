@@ -1,7 +1,7 @@
 /*
  * PairPortSTM.cpp
  *
- *  Created on: 2014Äê11ÔÂ24ÈÕ
+ *  Created on: 2014ï¿½ï¿½11ï¿½ï¿½24ï¿½ï¿½
  *      Author: Administrator
  */
 
@@ -23,6 +23,7 @@ PairPortSTM::PairPortSTM(uint32 uid) : PairResource(uid) {
     }
     ST_SDH_VC4 info;
     info.slot = stminfo.stm.slot;
+    info.xcsn = stminfo.stm.xcsn;
     info.stm = stminfo.stm.stm;
     for( int i = 0; i < vc4Number; i++ ) {
         info.hp = i;
@@ -140,7 +141,7 @@ bool PairPortSTM::setJ0RLen(uint8 len) {
     return false;
 }
 
-//D1~D12¿ªÏúÑ¡Ôñ
+//D1~D12ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
 uint16 PairPortSTM::getDCCSel(void) {
     std::pair<PortSTM4*, PortSTM4*> p = getParts<PortSTM4>();
     if( p.first ) {

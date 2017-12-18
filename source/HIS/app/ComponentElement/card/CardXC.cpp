@@ -83,7 +83,8 @@ CardXC::CardXC(std::string& name, CBaseSlot* slot) : CBaseCard(name, slot),
     /* ����������������������������*/
 
     ST_SDH_STM info;
-    info.slot = slot->GetSn();
+    info.slot = 0;
+    info.xcsn = slot->GetSn();
     for( int i = 0; i < 2; i++ ) {
         info.stm = i;
         stm4_obj[i] = new PortSTM4(UID::makeUID(&info), pxc.getConfigSaver(), driver, &ConfigData->stmport[i], true);

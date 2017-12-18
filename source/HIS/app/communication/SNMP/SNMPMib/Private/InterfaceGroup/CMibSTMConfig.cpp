@@ -42,7 +42,7 @@ column_info_T* CMibSTMConfig::getColInfo(int sn) {
 
 
 /*
- * STMConfig table ¹¤³§·½·¨
+ * STMConfig table ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 CMibNodeObject* CMibSTMConfig::MakeColumn(int sn, uint32* oid, uint32 oidLen) {
 	switch( sn ) {
