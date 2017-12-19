@@ -22,7 +22,6 @@ void SoftWDT::init(void) {
 
 void SoftWDT::startSoftWDT(void) {
     task_soft_wdt = os_tsk_create(T_SoftWDT, P_WDT);
-    GeneralLogic::instance().startWTD();
 }
 
 void SoftWDT::stopSoftWDT(void) {
@@ -55,6 +54,7 @@ void SoftWDT::feed(OS_TID t) {
 
 
 TASK void T_SoftWDT(void) {
+    GeneralLogic::instance().startWTD();
     while(1) {
         bool outtime = false;
         os_dly_wait(100);

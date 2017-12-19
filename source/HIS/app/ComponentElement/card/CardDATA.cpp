@@ -54,6 +54,7 @@ PairTSChannel* CardDATA::getConnectedTS(uint32 datauid) {
     UN_Info datainfo = UID::breakUID(datauid);
     ST_Time_Slot tsinfo;
     tsinfo.slot = datainfo.data.slot;
+    tsinfo.xcsn = 0;
     tsinfo.E1 = 0;
     tsinfo.TS = port2ts[datainfo.data.port];
     uint32 tsUID = UID::makeUID(&tsinfo);

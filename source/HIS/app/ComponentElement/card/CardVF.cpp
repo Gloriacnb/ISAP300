@@ -64,6 +64,7 @@ PairTSChannel* CardVF::getConnectedTS(uint32 vfuid) {
     UN_Info vfinfo = UID::breakUID(vfuid);
     ST_Time_Slot tsinfo;
     tsinfo.slot = vfinfo.vf.slot;
+    tsinfo.xcsn = 0;
     tsinfo.E1 = 0;
     tsinfo.TS = port2ts[vfinfo.vf.port];
     uint32 tsUID = UID::makeUID(&tsinfo);

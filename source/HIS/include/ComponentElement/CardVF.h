@@ -50,6 +50,7 @@ public:
 private:
     uint8 PortNumber;
     OS_MUT mut_vf_cmd;
+    Chip30VFCPLD cpld;
     Chip30VFLogic chip;
     PortVF* port_obj[30];
     Card_ConfigData_30VF ConfigData;
@@ -57,7 +58,6 @@ private:
     static const uint8 port2ts[30];
 
     std::string cardversionInfo;
-    Chip30VFCPLD cpld;
     std::string getMcuVersion(void);
 
 
