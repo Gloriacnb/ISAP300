@@ -14,8 +14,8 @@
 #include "VFCmdTSEnable.h"
 #include "VFCmdTSMode.h"
 #include "VFcmdTSPolarTurn.h"
-#include "VFCmdTSRcvGain.h"
-#include "VFCmdTSSndGain.h"
+//#include "VFCmdTSRcvGain.h"
+//#include "VFCmdTSSndGain.h"
 #include "VFCmdSignalConfig.h"
 #include "VFCmdSignalStatus.h"
 #include "CPPTools.h"
@@ -41,11 +41,11 @@ PortVF::PortVF(uint32 uid, PairTSChannel* t, VFPort_Config_T* config, VFGroup_Co
     setWorkMode(ConfigData->mode, false);
     setPolarTurn(ConfigData->Polarturn, false);
     setSignalConfig((ConfigData->offHookSig<<4) | ConfigData->onHookSig, false);
-    PortType = readPortType();
-    if( PortType == DEF_VFType_4W || PortType == DEF_VFType_2W ) {
-        setRcvGain(ConfigDataG->rcvgain, false);
-        setSndGain(ConfigDataG->sndGain, false);
-    }
+//    PortType = readPortType();
+//    if( PortType == DEF_VFType_4W || PortType == DEF_VFType_2W ) {
+//        setRcvGain(ConfigDataG->rcvgain, false);
+//        setSndGain(ConfigDataG->sndGain, false);
+//    }
 }
 
 PortVF::~PortVF() {
@@ -139,42 +139,42 @@ bool PortVF::setPolarTurn(int polar, bool save) {
     return false;
 }
 
-uint8 PortVF::getRcvGain() {
-    return ConfigDataG->rcvgain;
-}
-uint8 PortVF::getSndGain() {
-    return ConfigDataG->sndGain;
-}
-bool PortVF::setRcvGain(uint8 g, bool save) {
-    uint8 tsn = (uint8)ts->getHID();
-    VFCmdTSRcvGain* cmd = new VFCmdTSRcvGain(tsn, g);
-    BelongCard->processVFCommand(*cmd);
-    int rtn = *(cmd->getResult());
-    delete cmd;
-    if( !save ) {
-        return true;
-    }
-    if( rtn == 0x5a ) {
-        ConfigDataG->rcvgain = g;
-        return BelongCard->saveConfig();
-    }
-    return false;
-}
-bool PortVF::setSndGain(uint8 g, bool save) {
-    uint8 tsn = (uint8)ts->getHID();
-    VFCmdTSSndGain* cmd = new VFCmdTSSndGain(tsn, g);
-    BelongCard->processVFCommand(*cmd);
-    int rtn = *(cmd->getResult());
-    delete cmd;
-    if( !save ) {
-        return true;
-    }
-    if( rtn == 0x5a ) {
-        ConfigDataG->sndGain = g;
-        return BelongCard->saveConfig();
-    }
-    return false;
-}
+//uint8 PortVF::getRcvGain() {
+//    return ConfigDataG->rcvgain;
+//}
+//uint8 PortVF::getSndGain() {
+//    return ConfigDataG->sndGain;
+//}
+//bool PortVF::setRcvGain(uint8 g, bool save) {
+//    uint8 tsn = (uint8)ts->getHID();
+//    VFCmdTSRcvGain* cmd = new VFCmdTSRcvGain(tsn, g);
+//    BelongCard->processVFCommand(*cmd);
+//    int rtn = *(cmd->getResult());
+//    delete cmd;
+//    if( !save ) {
+//        return true;
+//    }
+//    if( rtn == 0x5a ) {
+//        ConfigDataG->rcvgain = g;
+//        return BelongCard->saveConfig();
+//    }
+//    return false;
+//}
+//bool PortVF::setSndGain(uint8 g, bool save) {
+//    uint8 tsn = (uint8)ts->getHID();
+//    VFCmdTSSndGain* cmd = new VFCmdTSSndGain(tsn, g);
+//    BelongCard->processVFCommand(*cmd);
+//    int rtn = *(cmd->getResult());
+//    delete cmd;
+//    if( !save ) {
+//        return true;
+//    }
+//    if( rtn == 0x5a ) {
+//        ConfigDataG->sndGain = g;
+//        return BelongCard->saveConfig();
+//    }
+//    return false;
+//}
 
 uint8 PortVF::getSignalConfig(void) {
     return (ConfigData->offHookSig << 4) | ConfigData->onHookSig;

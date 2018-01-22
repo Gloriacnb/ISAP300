@@ -12,7 +12,7 @@
 
 static const uint8 MainVerNumberX = 3;
 static const uint8 MainVerNumberY = 1;
-static const uint8 MainVerNumberZ = 21;
+static const uint8 MainVerNumberZ = 22;
 
 CardCPU::CardCPU() {
 }

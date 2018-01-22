@@ -41,6 +41,8 @@
 #include <time.h>
 #include "GeneralLogic.h"
 #include "CardCPU.h"
+#include "PortVF.h"
+#include "UID.h"
 
 /* private functions declaration*/
 static BOOL_32 cmd_creat_dxc(void);
@@ -53,6 +55,9 @@ static BOOL_32 cmd_utc(void);
 
 static BOOL_32 cmd_syscfg(void);
 // static BOOL_32 cmd_recover_config(void);
+
+static BOOL_32 cmd_rgain(void);
+static BOOL_32 cmd_tgain(void);
 
 /*-----------------------Commands define-------------------------------------*/
 /* DxcConfig command */
@@ -125,6 +130,43 @@ static CMD_ROUTE_T utc_cmd =
     0//NULL
 };
 
+static UNS_32 cmd_rgain_plist[] =
+{
+    (PARSE_TYPE_STR ), /* The "rgain" command */
+	(PARSE_TYPE_DEC ), //slot
+    (PARSE_TYPE_DEC | PARSE_TYPE_OPT), //ch: 1~15 17~31, 0 is all
+    (PARSE_TYPE_DEC | PARSE_TYPE_END), //gain sn
+};
+static CMD_ROUTE_T rgain_cmd =
+{
+    (UNS_8 *) "rgain",
+	cmd_rgain,
+    (UNS_8 *) "get/set rgain AD.",
+    (UNS_8 *) "rgain [slot][channel][gvalue]\r\n"
+                "[slot] \r\n"
+                "[gvalue] -14 ~ +6 \r\n",
+	cmd_rgain_plist,
+    0//NULL
+};
+
+static UNS_32 cmd_tgain_plist[] =
+{
+    (PARSE_TYPE_STR ), /* The "tgain" command */
+	(PARSE_TYPE_DEC ), //slot
+    (PARSE_TYPE_DEC | PARSE_TYPE_OPT), //ch: 1~15 17~31, 0 is all
+    (PARSE_TYPE_DEC | PARSE_TYPE_END), //gain sn
+};
+static CMD_ROUTE_T tgain_cmd =
+{
+    (UNS_8 *) "tgain",
+	cmd_tgain,
+    (UNS_8 *) "get/set tgain DA.",
+    (UNS_8 *) "tgain [slot][channel][gvalue]\r\n"
+                "[slot] \r\n"
+                "[gvalue] -14 ~ +6 \r\n",
+	cmd_tgain_plist,
+    0//NULL
+};
 
 static UNS_32 cmd_syscfg_plist[] =
 {
@@ -298,6 +340,52 @@ BOOL_32 cmd_syscfg(void) {
     std::cout << sn << std::endl;
  	return TRUE;
 }
+
+static BOOL_32 cmd_rgain(void) {
+ 	UNS_8 slot = cmd_get_field_val(1);
+ 	UNS_8 ch = cmd_get_field_val(2);
+	ST_VF info;
+	info.slot = slot;
+	info.port = ch;
+	PortVF* p = PortVF::getInstance(UID::makeUID(&info));
+	if(p == 0) {
+        std::cout << "Error input!" << std::endl;
+        return FALSE;
+	}
+
+ 	if( parse_get_entry_count() > 3 ) {
+ 		UNS_8 g = cmd_get_field_val(3);
+		p->setRcvGain(g, true);
+        std::cout << "Rgain config complete!" << std::endl;
+ 	}
+ 	else {
+		std::cout << (int)p->getRcvGain() << std::endl;
+ 	}
+ 	return TRUE;
+}
+static BOOL_32 cmd_tgain(void) {
+ 	UNS_8 slot = cmd_get_field_val(1);
+ 	UNS_8 ch = cmd_get_field_val(2);
+	ST_VF info;
+	info.slot = slot;
+	info.port = ch;
+	PortVF* p = PortVF::getInstance(UID::makeUID(&info));
+	if(p == 0) {
+        std::cout << "Error input!" << std::endl;
+        return FALSE;
+	}
+
+ 	if( parse_get_entry_count() > 3 ) {
+ 		UNS_8 g = cmd_get_field_val(3);
+		p->setSndGain(g, true);
+        std::cout << "Rgain config complete!" << std::endl;
+ 	}
+ 	else {
+		std::cout << (int)p->getSndGain() << std::endl;
+ 	}
+ 	return TRUE;
+}
+
 /*--------------------------public function----------------------------*/
 void CLI_config_add_commands(void) {
 	/* Add NAND group */
@@ -309,6 +397,8 @@ void CLI_config_add_commands(void) {
 	cmd_add_new_command(&config_group, &tudel_cmd);
 	cmd_add_new_command(&config_group, &syscfg_cmd);
     cmd_add_new_command(&config_group, &utc_cmd);
+    cmd_add_new_command(&config_group, &rgain_cmd);
+    cmd_add_new_command(&config_group, &tgain_cmd);
 
 
 }//Nand�洢

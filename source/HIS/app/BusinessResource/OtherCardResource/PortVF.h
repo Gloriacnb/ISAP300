@@ -17,6 +17,10 @@
 #define DEF_VFType_FXO  4
 #define DEF_VFType_2W   5
 
+typedef struct {
+    uint8 rcvgain;
+    uint8 sndGain;
+}VFGroup_Config_T;
 
 typedef struct {
     uint8 enable; //Enable(1) Disable(0)
@@ -26,12 +30,10 @@ typedef struct {
     uint8 onHookSig;
     char desc[32];
     uint8 dlen;
-}VFPort_Config_T;
-
-typedef struct {
     uint8 rcvgain;
     uint8 sndGain;
-}VFGroup_Config_T;
+}VFPort_Config_T;
+
 
 
 class PairTSChannel;
@@ -54,10 +56,10 @@ public:
     bool setWorkMode(int md, bool save = true);
     int getPolarTurn(void);
     bool setPolarTurn(int polar, bool save = true);
-    uint8 getRcvGain();
-    uint8 getSndGain();
-    bool setRcvGain(uint8 g, bool save = true);
-    bool setSndGain(uint8 g, bool save = true);
+    virtual uint8 getRcvGain() = 0;
+    virtual uint8 getSndGain() = 0;
+    virtual bool setRcvGain(uint8 g, bool save = true) = 0;
+    virtual bool setSndGain(uint8 g, bool save = true) = 0;
 
     char* getDescription(uint32* len);
     bool setDescription(char* s, uint32 len, bool save = true);
@@ -65,7 +67,7 @@ public:
     uint8 getSignalConfig(void);
     bool setSignalConfig(uint8 sig, bool save = true);
     uint8 getSignalRcved(void);
-private:
+protected:
 //    std::string name;
     PairTSChannel* ts;
     VFPort_Config_T* ConfigData;

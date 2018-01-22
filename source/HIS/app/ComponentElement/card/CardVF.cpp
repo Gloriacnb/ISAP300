@@ -6,7 +6,8 @@
  */
 
 #include "CardVF.h"
-#include "PortVF.h"
+#include "PortVFA.h"
+#include "PortVFG.h"
 #include "UID.h"
 #include "PairTSChannel.h"
 #include "CardTypeID_define.h"
@@ -34,17 +35,33 @@ CardVF::CardVF(std::string& name, CBaseSlot* slot, uint8 pn) :
     if( processVFCommand(cmd) < 0 ) {
         throw SysError("!!!VF Card init error!!!");
     }
-
 	if (!fetchConfig()) {
 		throw SysError("!!!Card " + name + " config data error!!!");//
 	}
+    bool chip1054 = false;
+    VFCmdMcuVer vercmd;
+    if( processVFCommand(vercmd) < 0 ) {
+        throw SysError("!!!VF Card init error!!!");
+    }
+
+    if(*vercmd.getResult() > 1) {
+    	chip1054 = true;
+    }
 	ST_VF info;
 	info.slot = slot->GetSn();
 	for (int i = 0; i < PortNumber; i++) {
 		info.port = i;
 		uint32 portUID = UID::makeUID(&info);
-		port_obj[i] = new PortVF(portUID, getConnectedTS(portUID),
-				&ConfigData.port[i], &ConfigData.group[i/4], this);
+		if(chip1054) {
+			printf("new vf 1054\r\n");
+			port_obj[i] = new PortVFG(portUID, getConnectedTS(portUID),
+					&ConfigData.port[i], &ConfigData.group[i/4], this);
+		}
+		else {
+			printf("old vf 1054A\r\n");
+			port_obj[i] = new PortVFA(portUID, getConnectedTS(portUID),
+					&ConfigData.port[i], &ConfigData.group[i/4], this);
+		}
 	}
 
 

@@ -2406,6 +2406,16 @@
               <FileType>8</FileType>
               <FilePath>./source/HIS/app/BusinessResource/OtherCardResource/PortFE1.cpp</FilePath>
             </File>
+            <File>
+              <FileName>PortVFA.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\source\HIS\app\BusinessResource\OtherCardResource\PortVFA.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>PortVFG.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\source\HIS\app\BusinessResource\OtherCardResource\PortVFG.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
